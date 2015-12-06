@@ -11,7 +11,7 @@ public class ATMNode {
 
 			@Override
 			public void run() {
-				new Controler();
+				new Controler(args);
 				
 			}
 			

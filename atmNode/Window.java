@@ -8,14 +8,17 @@ import javax.swing.JTextPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.StyledDocument;
+import javax.swing.JLabel;
+import javax.swing.JButton;
 
 public class Window extends JFrame{
 	
 	private DefaultTableModel modelTable = new DefaultTableModel();
 	private JTable FIB = new JTable(modelTable);
 	private JTextPane history;
-	
+
 	Window(){
+	
 		setTitle("Węzeł ATM");
 		setResizable(false);
 		setSize(750, 400);
@@ -41,7 +44,9 @@ public class Window extends JFrame{
 		history = new JTextPane();
 		history.setBounds(330, 43, 400, 200);
 		panel.add(history);
+
 	}
+		
 	
 	public void setEntry(String port_s, String vpi_s, String vci_s,String port_d, String vpi_d, String vci_d){
 		modelTable.addRow(new Object[] {port_s, vpi_s, vci_s, port_d, vpi_d, vci_d});
@@ -56,5 +61,4 @@ public class Window extends JFrame{
 		}
 	                                                   
 	 }
-	
 }
