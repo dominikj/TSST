@@ -1,22 +1,22 @@
 package atmNode;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ATMNode {
 
 	public static void main(String[] args) {
 		FIBbase base = new FIBbase();
-		ArrayList<Integer> entry = new ArrayList<Integer>();
-		ArrayList<Integer> result;
-		entry.add(3);
-		entry.add(5);
-		entry.add(0);
-		base.addNode(2, 3, 1, entry);
-		entry.clear();
-		entry.add(0); entry.add(9); entry.add(9);
-		base.addNode(2, 8, 2, entry);
+		ConnectionControler cc = new ConnectionControler(base);
+		ArrayList<String> table = new ArrayList<String>();
+		table.add("2 3 4 5 6 7");
+		cc.makeCommand("SETTABLE", table);
 		
-		result = base.getEntry(2, 8, 2);
+		ArrayList<Integer> result;
+		
+		
+		result = base.getEntry(4,2,3);
 		for(int i : result){
 			System.out.println(i);
 		}

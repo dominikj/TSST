@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class FIBbase {
 
 	private FIBComposite root = new FIBComposite();
+
 	
 	public void addNode(int port, int VP, int VC, ArrayList<Integer> value){
 		FIBComposite node;
