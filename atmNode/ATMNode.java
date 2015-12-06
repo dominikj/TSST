@@ -1,12 +1,22 @@
 package atmNode;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import javax.swing.SwingUtilities;
 
 public class ATMNode {
 
 	public static void main(String[] args) {
+		
+		SwingUtilities.invokeLater( new Runnable() {
+
+			@Override
+			public void run() {
+				new Controler();
+				
+			}
+			
+		});
+		
 		FIBbase base = new FIBbase();
 		ConnectionControler cc = new ConnectionControler(base);
 		ArrayList<String> table = new ArrayList<String>();
