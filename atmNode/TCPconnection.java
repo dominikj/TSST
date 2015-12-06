@@ -32,21 +32,25 @@ public class TCPconnection {
 		try {
 			while (!((dataIn = input.readLine()).equals("."))){
 				data.add(dataIn);
+				System.out.println("Pobrano: "+ dataIn);
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println("Koniec");
 		return data;
 	}
 	public void sendData(ArrayList<String> data){
+		try {
 		for(String s: data){
-			try {
+			
 				output.writeBytes(s + "\r\n");
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		}
+		output.writeBytes(".\r\n");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 	public void close(){

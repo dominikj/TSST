@@ -8,9 +8,9 @@ import javax.swing.JTextPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.StyledDocument;
-import javax.swing.JLabel;
-import javax.swing.JButton;
 
+
+@SuppressWarnings("serial")
 public class Window extends JFrame{
 	
 	private DefaultTableModel modelTable = new DefaultTableModel();
@@ -25,6 +25,7 @@ public class Window extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 		setVisible(true);
+		
 		
 		JPanel panel = new JPanel();
 		getContentPane().add(panel);
@@ -48,7 +49,7 @@ public class Window extends JFrame{
 	}
 		
 	
-	public void setEntry(String port_s, String vpi_s, String vci_s,String port_d, String vpi_d, String vci_d){
+	public void setEntry(String vpi_s, String vci_s, String port_s,String vpi_d, String vci_d, String port_d){
 		modelTable.addRow(new Object[] {port_s, vpi_s, vci_s, port_d, vpi_d, vci_d});
 	}
 	
