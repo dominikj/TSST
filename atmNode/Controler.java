@@ -26,5 +26,11 @@ Controler(){
 		}
 		cc.makeCommand(cell.get(1), args);
 	}
+	else{
+		ArrayList<Integer> result = base.getEntry(Integer.parseInt(tmp[1]),Integer.parseInt(tmp[2]),Integer.parseInt(tmp[3]));
+		for(int i : result){
+			System.out.println(i);
+		}
+	}
 }
 }
